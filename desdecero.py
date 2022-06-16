@@ -221,3 +221,74 @@ n=1
 while n <=10:
     print(n)
     n=n+1 
+
+#--- comprension de listas
+
+#l=[]
+#for el in l: #-- col es los elementos de la lista
+#    if el % 2 == 1:
+#        l.append(el * 2)
+#    else:
+#        l.append(-1)
+
+#otra opcion para comprencion de listas
+
+#-- l=[el * 2 for el in col] col es la lista
+
+#-- otro ejemplo
+
+#-- l_in = [3, -4, 0, 7, -1, 4, 2, 0]
+#-- dos claves -> nombre y nota
+estudiantes = [
+    {"nombre":"José Fernandez", "nota":7.8},
+    {"nombre":"Marina Jimenez", "nota":8.5},
+    {"nombre":"Francisco Rios", "nota":4.3},
+    {"nombre":"Josefa Sanchez", "nota":8.1},
+    {"nombre":"Lucia Pisuerga", "nota":4.8},
+    {"nombre":"Antonio Callao", "nota":3.8},
+    {"nombre":"Felipe Barreno", "nota":9.7},
+    {"nombre":"Elena Gonzales", "nota":5.1}
+]
+
+for estudiante in estudiantes:
+    if estudiante["nota"] >= 5:
+        print(estudiante["nombre"] + " ha aprobado la asignatura")
+    else:
+        print(estudiante["nombre"] + " ha suspendido la asignatura")
+
+# nota promedio
+
+nota_suma=0
+
+for estudiante in estudiantes:
+    nota_suma = nota_suma + estudiante["nota"]
+nota_promedio = nota_suma / len(estudiantes)
+print(f"la nota promedio es {nota_promedio:.2f}")
+
+#-------- capital con bucle ------------
+
+#tipo de interes ( en %, sobre 1)
+
+i = 0.015
+
+#Periodo en años
+
+n=10
+
+#comisiones mensuales(en euros)
+
+f=5
+
+#-- range(entre 0, hasta 20000, avanza de 5 en 5) capital (C)
+# gastos asociados a comisiones (G) -- ** es potencia
+# capital final (M)
+# saldo final de la cuenta (S)
+G = f * 12 * n
+for C in range(0,20000,5):
+    M = C * (1 + i) ** n
+    S = M - G
+    if S >= C:
+        print(f"Si aportas almenos {C:.2f} euros, no tendrás perdidas.") #podemos imprimir el capital con {str(C)}
+        break
+if S < C:
+    print("aunque aportes todo tu capital, tendrás perdidas.")
