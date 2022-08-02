@@ -266,7 +266,6 @@ nota_promedio = nota_suma / len(estudiantes)
 print(f"la nota promedio es {nota_promedio:.2f}")
 
 #-------- capital con bucle ------------
-
 #tipo de interes ( en %, sobre 1)
 
 i = 0.015
@@ -292,3 +291,27 @@ for C in range(0,20000,5):
         break
 if S < C:
     print("aunque aportes todo tu capital, tendrás perdidas.")
+
+#------#
+#metodo de biseccion
+
+a = 2
+b = 4
+E = 1E-8
+
+m = (a+b)/2
+
+fm = m**3 - 3 * m**2 + 3 * m-4
+
+while abs(fm) > E:
+    if fm < 0:
+        a = m
+    else:
+        b = m
+
+m = (a+b)/2
+fm = m**3 - 3 * m**2 + 3 * m-4
+
+print(f"La función se anula en el punto x = {m:.4f}")
+
+#-----------------------#
