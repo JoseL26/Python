@@ -26,3 +26,20 @@ l=["Hola", "mundo", "adiós"]
 print("_".join(l)) #une todo por medio de un _
 print(" ".join(l)) #une todo por medio de un espacio
 print("##".join(l)) #une todo por medio de michis
+
+#Busqueda de cadenas
+x = "Hola mundo"
+print(x.find("mun")) #nos devuelve el orden de la m
+print(x.find("o")) #nos devuelve el orden de la primera o
+
+print("Hola\nmundo")
+print("Hola\tmundo")
+print("Hola\\mundo")
+
+s = "x = "
+x = 3.5
+print(s + str(x))
+
+nombre = input("Escribe aquí tu nombre:")
+
+print(f"!Hola,{nombre}!")
