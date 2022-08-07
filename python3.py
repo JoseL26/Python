@@ -29,3 +29,25 @@ for i in range(100):
 d = {"a": 1, "b": 2}
 for i in d:
     print(i)
+
+
+s = "Hola, mundo"
+print(s.split(","))
+
+s = "Hola mundo"
+print(s[3:7])
+
+m = 100
+age = int(input("Introduce tu edad "))
+print(f"Te faltan {m - age} años")
+
+s = "Hola mundo"
+print(s[2:-2:2])
+
+s = "Hola mundo"
+a = s.split(" ")
+print(":".join(a).title())
+
+#    m = 100
+#   age = input("Introduce tu edad")
+#   print("Te faltan " + (m - age) + "años") sale error
