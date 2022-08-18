@@ -2,6 +2,8 @@
 #--- funciones sin parametros ni retornos. ---#
 
 
+from audioop import mul
+from logging import exception
 from time import altzone
 from tkinter import N
 
@@ -130,3 +132,114 @@ def integral(a,b,n):
 
 integ=integral(a=0,b=5,n=10000)
 print(integ)
+
+
+#-- Scrable --#
+
+def scrablle(palabra, multi=1, **puntos):# ** con esto empaqueta las variables en un diccionario)
+    puntuaciones = 0
+    for letra in palabra:
+        if letra not in palabra:
+            raise exception(f"La letra {letra} no tiene puntuación asociada.")
+        puntuaciones = puntuaciones + puntos[letra]
+    return puntuaciones * multi
+
+m_noax = scrablle("NOAX", N=1, O=1, A=1, X=8)
+print(m_noax)
+
+m_academy = scrablle("ACADEMY", multi=3, A=1, C=3, D=2, E=1, M=3, Y=4)
+print(m_academy)
+
+#-------------#
+def prod (l):
+    if len(l) == 1:
+        return l[0]
+    return l[0] * prod(l[1:])
+l = [1, 2, 3, 4, 5]
+print(prod(l))
+
+#sale 120
+
+#----------#
+#def prod (l):
+#    return l[0] * prod(l[1:])
+#l = [1, 2, 3, 4, 5]
+#print(prod(l))
+
+#sale un indexError
+
+#-----#
+a = 7
+def modify (a):
+    a = a * a
+modify(a)
+print(a)
+#sale 7
+
+#---#
+#g = genps()
+#for p in g:
+#    print(p)
+#    if p > 10000:
+#        break
+#no produce un bucle infinito, no imprime todos los numeros menores a 10000
+
+#----#
+l = [1, 2, 3]
+def modify (l, *ns):
+    l.extend(ns)
+    l = []
+modify(l, "a")
+print(l)
+
+#sale [1,2,3,'a']
+
+#-----#
+
+def genps ():
+    n = 2
+    while (True):
+        isp = True
+        for d in range(2, n):
+            if n % d == 0:
+                isp = False
+                break
+        if isp:
+            yield n
+        n = n + 1
+
+print(genps)
+#no produce bucle infinito, ni devuelve todos los primos
+
+#----------#
+def power (b, e=3):
+    return b ** e
+p = power(b=3)
+print(p)
+#sale 27
+
+#------------#
+
+def sort_two (a, b):
+    if a < b:
+        return a, b
+    else:
+        return b, a
+print(sort_two("c", "a"))
+#sale ('a', 'c')
+
+#---------------#
+def compute (m, *l):
+    return m * sum(l)
+c = compute(3, 1, 2, 3)
+print(c)
+#sale 18
+
+#---------#
+
+def f (a, b):
+    a + b
+tot=f(3,1)
+print(tot)
+
+#sale ninguna

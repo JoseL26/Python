@@ -51,3 +51,4 @@ print(":".join(a).title())
 #    m = 100
 #   age = input("Introduce tu edad")
 #   print("Te faltan " + (m - age) + "años") sale error
+
