@@ -128,3 +128,15 @@ caja_1 ={
 }
 monedas=cambio_minimo(cambio_1, caja_1)
 print(f"Las monedas del cambio son: {monedas}")
+
+#-------------#
+#una tupla permite valores repetidos pero no se puede modificar, la lista si
+#tupla =[
+# (valor1, valor2, valor3),
+# (valor1, valor2, valor3)]
+
+#-----------#
+#diccionario
+#diccionario=[
+# in:dentro,
+# out:fuera]
